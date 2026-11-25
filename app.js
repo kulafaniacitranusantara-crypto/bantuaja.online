@@ -638,8 +638,7 @@ reg('beranda', 'Beranda', null, async (p, v) => {
   const list = h.mitra.filter(m => !area || m.wilayah.indexOf(area) >= 0);
   v.innerHTML =
     '<div class="chips" role="group" aria-label="Filter desa"><button class="chip ' + (!area ? 'on' : '') + '" data-act="homeArea" data-v="">Semua Desa</button>' +
-    '<div class="chips desa-strip" role="group" aria-label="Filter desa">' +
-h.areas.map((d, i) => '<button class="chip ' + (area === d.nama ? 'on' : '') + '" style="--i:' + (i + 1) + '" data-act="homeArea" data-v="' + E(d.nama) + '">' + E(d.nama.replace('Desa ', '')) + '</button>').join('') + '</div>' +
+    h.areas.map(d => '<button class="chip ' + (area === d.nama ? 'on' : '') + '" data-act="homeArea" data-v="' + E(d.nama) + '">' + E(d.nama.replace('Desa ', '')) + '</button>').join('') + '</div>' +
     '<div class="bb-card hero mt-2"><div class="eyebrow">Solusi harian warga ' + E(h.settings.namaDaerah || 'Banyumas') + '</div>' +
     '<h1 class="title-lg mt-2">Semua Urusan,<br><span style="color:var(--gold-text)">Ada Solusinya.</span></h1>' +
     '<p class="muted mt-2 mb-3">Penyedia jasa terverifikasi tetangga sendiri di Kecamatan Lumbir dan sekitarnya. Cepat, amanah, dan harga sedulur.</p>' +
